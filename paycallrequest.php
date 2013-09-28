@@ -3,15 +3,10 @@
 require_once 'Services/Twilio.php';
 
 
-
-
 $code = $_GET['code'];
 $tid = $_tid['tid'];
 $phonenumber = 	$_GET['phone'];
 $name = $_GET['name'];
-
-
-
 
 echo $tid;
 

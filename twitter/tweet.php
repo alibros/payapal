@@ -12,5 +12,5 @@ if(empty($_POST['tweet'])) {
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $user['twitter_oauth_token'], $user['twitter_oauth_token_secret']);
 $status = $connection->post('statuses/update', array('status' => $_POST['tweet']));
 
-header('Location: /');
+header('Location: /?tweeted');
 ?>

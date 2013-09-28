@@ -117,6 +117,16 @@ $dbh = null;
 		        </div>
 	    	</div>
 	    	<?php } ?>
+
+	    	<?php if((!empty($user['twilio_pin'])) && ($user['verify_pin']==1)) { ?>
+	    	<div class="row-fluid">
+		        <div id="phone-well" class="span12 well">
+		          <h2>Verification PIN #</h2>
+		          <code><?php echo $user['twilio_pin']; ?></code>
+		        </div>
+	    	</div>
+	    	<?php } ?>
+
 	    </div>
 	</section>
 
@@ -124,48 +134,102 @@ $dbh = null;
 	<section id="about" data-speed="2" data-type="background">
 		<div class="container">
 			<div class="page-header">
-				<h1>How does it work?</h1>
+				<h1>What is this?</h1>
 			</div>
 			<div class="row-fluid">
-		        <div class="span4">
-		          <h2>More Details</h2>
-		          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque cursus nisl consectetur et.</p>
-		          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque cursus nisl consectetur et.</p>
-		          <p><a class="btn btn-success">View details &raquo;</a></p>
-		        </div><!-- /.span4 -->
-		        <div class="span4">
-		         	<div class="media">
-						<a class="pull-left" href="#">
-					    	<img class="media-object" src="images/check.png">
-						</a>
-						<div class="media-body">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
-						</div>
-					</div>
-		         	<div class="media">
-						<a class="pull-left" href="#">
-					    	<img class="media-object" src="images/check.png">
-						</a>
-						<div class="media-body">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
-						</div>
-					</div>
-		         	<div class="media">
-						<a class="pull-left" href="#">
-					    	<img class="media-object" src="images/check.png">
-						</a>
-						<div class="media-body">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
-						</div>
-					</div>
-		        </div><!-- /.span4 -->
-		        <div class="span4">
-		          <h2>A Thing</h2>
-		          
+		        <div class="span12 text-left">
+		          	<h2>Over The Air 2013</h2>
+		          	<h3>27th - 28th September, 2013</h3>
 		        </div>
+			</div>
+			<div class="row-fluid">
+
+		        <div class="span4">
+		        	<h2>What?</h2>
+		          	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="images/check.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Media heading</h4>
+						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						</div>
+					</div>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="images/check.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Media heading</h4>
+						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						</div>
+					</div>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="images/check.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Media heading</h4>
+						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						</div>
+					</div>
+				</div>
+
+		        <div class="span4">
+		        	<h2>How?</h2>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="/images/twitter.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Twitter</h4>
+						    Used for sign in and sending and receiving payment notifications.
+						</div>
+					</div>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="/images/paypal.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Paypal</h4>
+						    Sign in and the payment bit.
+						</div>
+					</div>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="/images/twilio.png">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Twilio</h4>
+						    For the extra authentication fun.
+						</div>
+					</div>
+		        </div>
+
+		        <div class="span4">
+		          <h2>Who?</h2>
+		          <div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="/images/dylan.jpg">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Dylan Jones</h4>
+						    A software engineer at BT in Cardiff.
+						    <p><a href="http://twitter.com/dylan8902">@dylan8902</a></p>
+						</div>
+					</div>
+		         	<div class="media">
+						<a class="pull-left" href="#">
+					    	<img class="media-object" src="/images/ali.jpg">
+						</a>
+						<div class="media-body text-left">
+						    <h4 class="media-heading">Ali Bros</h4>
+						    Mobile application maker for some company.
+						    <p><a href="http://twitter.com/ali_bros">@ali_bros</a></p>
+						</div>
+					</div>
+		        </div>
+
 	    	</div>
 	    </div>
 	</section>

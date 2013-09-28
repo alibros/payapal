@@ -17,8 +17,8 @@ function dbh() {
 
 function getUser() {
 	global $dbh;
-	$sth = $dbh->prepare("SELECT * FROM payapal_users WHERE twitter_id = ? LIMIT 1");
-	$sth->execute(array($_SESSION['twitter']['user']['id_str']));
+	$sth = $dbh->prepare("SELECT * FROM payapal_users WHERE twitter_id = ? OR paypal_id = ? LIMIT 1");
+	$sth->execute(array($_SESSION['twitter']['user']['id_str'], $_SESSION['paypal']['user']['user_id']));
 	return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
