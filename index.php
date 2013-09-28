@@ -141,8 +141,8 @@ $dbh = null;
 		          	<h2>Over The Air 2013</h2>
 		          	<h3>27th - 28th September, 2013</h3>
 		        </div>
-		        <div class="span8 text-left">
-		        	https://github.com/alibros/payapal
+		        <div class="span4 text-left">
+		        	<a href="https://github.com/alibros/payapal" class="btn btn-large btn-default">It's on Github!</a>
 		        </div>
 			</div>
 			<div class="row-fluid">
