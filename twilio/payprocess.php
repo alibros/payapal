@@ -11,6 +11,7 @@ if ($digits==$code) {
 
 	$sth = $dbh->prepare("UPDATE payapal_tweets SET verify_pin = 1 WHERE id = ?");
 	$sth->execute(array($tid));
+
 }
 else {
 	echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
