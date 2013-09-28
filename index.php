@@ -137,9 +137,12 @@ $dbh = null;
 				<h1>What is this?</h1>
 			</div>
 			<div class="row-fluid">
-		        <div class="span12 text-left">
+		        <div class="span8 text-left">
 		          	<h2>Over The Air 2013</h2>
 		          	<h3>27th - 28th September, 2013</h3>
+		        </div>
+		        <div class="span8 text-left">
+		        	https://github.com/alibros/payapal
 		        </div>
 			</div>
 			<div class="row-fluid">
