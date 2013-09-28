@@ -1,8 +1,14 @@
 <?php
 // Include the Twilio PHP library
-require 'Services/Twilio.php';
+require_once 'Services/Twilio.php';
 
-echo $stringData;
+
+$code = $_GET['code'];
+$tid = $_tid['tid'];
+$phonenumber = 	$_GET['phone'];
+$name = $_GET['name'];
+
+echo $tid;
 
 
 	// Set our Account SID and AuthToken
@@ -10,7 +16,7 @@ echo $stringData;
 	$token = 'abdfd4c57c28f7c9727c51e6cc93d894';
 	
 	// A phone number you have previously validated with Twilio
-	$phonenumber = 	$_GET['phone'];
+	
 	// Instantiate a new Twilio Rest Client
 	$client = new Services_Twilio($sid, $token, $version);
 
@@ -19,7 +25,7 @@ echo $stringData;
 		$call = $client->account->calls->create(
 			'+441744582325',   // The number of the phone initiating the call
 			$phonenumber, // The number of the phone receiving call
-			'http://payapal.dyl.anjon.es/singrequestxml.php' // The URL Twilio will request when the call is answered
+			'http://payapal.dyl.anjon.es/twilio/initalrequest.php?tid='.$tid .'&name='.urlencode($name).'&code='.$code// The URL Twilio will request when the call is answered
 		);
 		echo 'Started call: ' . $call->sid;
 	} catch (Exception $e) {

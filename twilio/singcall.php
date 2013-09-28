@@ -15,7 +15,7 @@ require 'Services/Twilio.php';
 		$call = $client->account->calls->create(
 			'+441744582325',   // The number of the phone initiating the call
 			$phonenumber, // The number of the phone receiving call
-			urlencode('http://payapal.dyl.anjon.es/singxml.php?song_name='.$_GET['song_name']."&tid=".$_GET['tid']."&song_url=".$_GET['song_url']) // The URL Twilio will request when the call is answered
+			urlencode('http://payapal.dyl.anjon.es/twilio/singxml.php?song_name='.$_GET['song_name']."&tid=".$_GET['tid']."&song_url=".$_GET['song_url']) // The URL Twilio will request when the call is answered
 		);
 		echo 'Started call: ' . $call->sid;
 	} catch (Exception $e) {
