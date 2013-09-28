@@ -197,8 +197,8 @@ $dbh = null;
 					    	<img class="media-object" src="images/check.png">
 						</a>
 						<div class="media-body text-left">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						    <h4 class="media-heading">Simple</h4>
+						    You can send people money in a casual tweet with the addition of a hashtag. Wowza!
 						</div>
 					</div>
 				</div>
