@@ -60,6 +60,9 @@ $dbh = null;
 		    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 		}
 		.media-object { width: 64px; height: 64px; padding-bottom: 30px }
+		#who img {
+			border-radius: 30px;
+		}
 	</style>
 
 </head>
@@ -95,7 +98,7 @@ $dbh = null;
 		          <h3>
 		          <?php
 		          	if(empty($user['paypal_id']))
-		          		echo "<a href=\"https://www.sandbox.paypal.com/webapps/auth/protocol/openidconnect/v1/authorize?response_type=code&scope=openid+profile+email+address+email+phone&client_id=ATT0HxAFzMYwAoRii7jF1okec0YkFoXgVTbKFVeNi43pTea5aBsdytj60FVR&redirect_uri=http%3A%2F%2Fpayapal.dyl.anjon.es%2Fpaypal%2Fcallback.php\" class=\"btn btn-large btn-default\">Paypal</a>";
+		          		echo "<a href=\"https://www.sandbox.paypal.com/webapps/auth/protocol/openidconnect/v1/authorize?response_type=code&scope=openid+profile+email+address+email+phone+https%3A%2F%2Furi.paypal.com%2Fservices%2Fexpresscheckout&client_id=ATT0HxAFzMYwAoRii7jF1okec0YkFoXgVTbKFVeNi43pTea5aBsdytj60FVR&redirect_uri=http%3A%2F%2Fpayapal.dyl.anjon.es%2Fpaypal%2Fcallback.php\" class=\"btn btn-large btn-default\">Paypal</a>";
 		          	else
 					    echo "<img src=\"images/check.png\"> ".$user['paypal_email']."";
 		          ?>
@@ -148,7 +151,7 @@ $dbh = null;
 		          	<h2>Over The Air 2013</h2>
 		          	<h3>27th - 28th September, 2013</h3>
 		        </div>
-		        <div class="span4 text-left">
+		        <div class="span4 text-right">
 		        	<a href="https://github.com/alibros/payapal" class="btn btn-large btn-default">It's on Github!</a>
 		        </div>
 			</div>
@@ -216,7 +219,7 @@ $dbh = null;
 					</div>
 		        </div>
 
-		        <div class="span4">
+		        <div id="who" class="span4">
 		          <h2>Who?</h2>
 		          <div class="media">
 						<a class="pull-left" href="#">

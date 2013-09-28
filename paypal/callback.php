@@ -49,7 +49,38 @@ $sth = $dbh->prepare("SELECT * FROM payapal_users WHERE paypal_id = ? LIMIT 1");
 $sth->execute(array($_SESSION['paypal']['user']['user_id']));
 $_SESSION['user'] = $sth->fetch(PDO::FETCH_ASSOC);
 
-header('Location: /');
+
+/*
+$post["intent"] = "authorize";
+$post["redirect_urls"]["return_url"] = "http://payapal.dyl.anjon.es/";
+$post["redirect_urls"]["cancel_url"] = "http://payapal.dyl.anjon.es/?cancel";
+$post["payer"]["payment_method"] = "paypal";
+$post["transactions"][0]["amount"]["total"] = "50.00";
+$post["transactions"][0]["amount"]["currency"] = "GBP";
+$post["description"] = "Pay A Pal will send money to people you tweet #payapal";
+
+$post = json_encode($post);
+echo $post;
+$ch = curl_init("https://api.sandbox.paypal.com/v1/payments/payment");
+
+curl_setopt_array($ch,
+  array(
+    CURLOPT_POST           => TRUE,
+    CURLOPT_POSTFIELDS     => $post,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_SSL_VERIFYPEER => FALSE,
+    CURLOPT_HTTPHEADER     => array("Authorization: Bearer ".$_SESSION['paypal']['access_token'], "Content-type: application/json", "Content-length: ".strlen($post))
+  )
+);
+
+$response = curl_exec($ch);
+echo $_SESSION['paypal']['access_token'];
+echo "<br><br><br>";
+var_dump($response);
+var_dump(curl_getinfo($ch));
+*/
+
+header('Location: /?paypal');
 
 $dbh = null;
 ?>
