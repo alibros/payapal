@@ -56,7 +56,7 @@ for ($a=0; $a<count($tweets['statuses']); $a++) {
 					$_GET['phone'] = $user['twilio_number'];
 					$_GET['code'] = $user['twilio_pin'];
 					$_GET['name'] = $user['twitter_name'];
-					include('../paycallrequest.php');
+					include('../twilio/paycallrequest.php');
 				}
 			}
 		}

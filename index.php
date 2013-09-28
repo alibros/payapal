@@ -104,7 +104,14 @@ $dbh = null;
 		        </div>
 	    	</div>
 
-	    	<?php if((!empty($user['paypal_id'])) && (!empty($user['twitter_id']))) { ?>
+			<?php if(isset($_GET['tweeted'])) { ?>
+	    	<div class="row-fluid">
+		        <div id="phone-well" class="span12 well">
+		          <h2>TWEET SENT</h2>
+		          <a href="/">send another</a>
+		        </div>
+	    	</div>
+	    	<?php } else if((!empty($user['paypal_id'])) && (!empty($user['twitter_id']))) { ?>
 	    	<div class="row-fluid">
 		        <div id="phone-well" class="span12 well">
 		          <h2>Send a tweet</h2>
@@ -118,7 +125,7 @@ $dbh = null;
 	    	</div>
 	    	<?php } ?>
 
-	    	<?php if((!empty($user['twilio_pin'])) && ($user['verify_pin']==1)) { ?>
+	    	<?php if((!empty($user['twilio_pin'])) && ($user['verify_pin'])) { ?>
 	    	<div class="row-fluid">
 		        <div id="phone-well" class="span12 well">
 		          <h2>Verification PIN #</h2>
