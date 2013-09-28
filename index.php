@@ -70,8 +70,7 @@ $dbh = null;
 	<section id="intro" data-speed="6" data-type="background">
 		<div class="container">
 	    	<div class="hero-unit">
-	    		<h1>Pay A Pal</h1>
-	    		<p>Send payments easily</p>
+	    		<h1><img src="/images/logo.png" alt="Pay A Pal"></h1>
 	    	</div>
 	    </div>
 	</section>
@@ -129,7 +128,8 @@ $dbh = null;
 	    	<div class="row-fluid">
 		        <div id="phone-well" class="span12 well">
 		          <h2>Verification PIN #</h2>
-		          <code style="font-size:32pt;"><?php echo $user['twilio_pin']; ?></code>
+		          <p style="margin-bottom:30px">We are calling your phone: +447747466782, please enter the following code:</p>
+		          <code style="font-size:32pt"><?php echo $user['twilio_pin']; ?></code>
 		        </div>
 	    	</div>
 	    	<?php } ?>
