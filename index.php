@@ -8,12 +8,10 @@ $dbh = null;
 	<meta charset="utf-8">
 	<title>Pay A Pal</title>
 	<meta name="description" content="Twitter Bootstrap Parallax Tutorial with HTML5 / CSS3 / JavaScript">
-	<meta name="author" content="Untame.net">
+	<meta name="author" content="Dylan Jones, Ali Bros">
 
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<script src="js/jquery-1.6.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/init.js"></script>
 
 	<style type="text/css">
 		html {
@@ -74,6 +72,7 @@ $dbh = null;
 		<div class="container">
 	    	<div class="hero-unit">
 	    		<h1><img src="/images/logo.png" alt="Pay A Pal"></h1>
+	    		<small style="text-align:right">powered by paypal</small>
 	    	</div>
 	    </div>
 	</section>
@@ -108,14 +107,40 @@ $dbh = null;
 
 			<?php if(isset($_GET['tweeted'])) { ?>
 	    	<div class="row-fluid">
-		        <div id="phone-well" class="span12 well">
+		        <div id="sent-well" class="span12 well">
 		          <h2>TWEET SENT</h2>
 		          <a href="/">send another</a>
 		        </div>
 	    	</div>
+
+	    	<script type="text/javascript">
+	    	$(document).ready(function() {
+				$('html, body').animate({
+			        scrollTop: $("#sent-well").offset().top
+			    }, 3000);
+	    	});
+	    	</script>
+
+	    	<div class="row-fluid">
+		        <div id="map-well" class="span12 well">
+		          <h2>Map</h2>
+		          <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.99651,%20-0.74276&amp;zoom=10&amp;size=900x300&amp;sensor=true">
+		        </div>
+	    	</div>
+
+	    	<?php if(!empty($user['twilio_pin'])) { ?>
+	    	<div class="row-fluid">
+		        <div id="pin-well" class="span12 well">
+		          <h2>Verification PIN #</h2>
+		          <p style="margin-bottom:30px">We are calling your phone: +447747466782, please enter the following code:</p>
+		          <code style="font-size:32pt"><?php echo $user['twilio_pin']; ?></code>
+		        </div>
+	    	</div>
+	    	<?php } ?>
+
 	    	<?php } else if((!empty($user['paypal_id'])) && (!empty($user['twitter_id']))) { ?>
 	    	<div class="row-fluid">
-		        <div id="phone-well" class="span12 well">
+		        <div id="tweet-well" class="span12 well">
 		          <h2>Send a tweet</h2>
 		          <div class="input-append">
 		          	<form action="/twitter/tweet.php" method="post">
@@ -123,16 +148,6 @@ $dbh = null;
 		            	<button id="tweet" class="btn btn-warning">Tweet</button>
 		            </form>
   				  </div>
-		        </div>
-	    	</div>
-	    	<?php } ?>
-
-	    	<?php if(!empty($user['twilio_pin'])) { ?>
-	    	<div class="row-fluid">
-		        <div id="phone-well" class="span12 well">
-		          <h2>Verification PIN #</h2>
-		          <p style="margin-bottom:30px">We are calling your phone: +447747466782, please enter the following code:</p>
-		          <code style="font-size:32pt"><?php echo $user['twilio_pin']; ?></code>
 		        </div>
 	    	</div>
 	    	<?php } ?>
@@ -161,11 +176,11 @@ $dbh = null;
 		        	<h2>What?</h2>
 		          	<div class="media">
 						<a class="pull-left" href="#">
-					    	<img class="media-object" src="images/check.png">
+					    	<img class="media-object" src="images/padlock.png">
 						</a>
 						<div class="media-body text-left">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						    <h4 class="media-heading">Quadruple Authentication</h4>
+						    Your account is safe with Twitter auth, PayPal auth, Verified Phone Number Confirmed and Audio Message. The new authentication standard. 
 						</div>
 					</div>
 		         	<div class="media">
@@ -173,8 +188,8 @@ $dbh = null;
 					    	<img class="media-object" src="images/check.png">
 						</a>
 						<div class="media-body text-left">
-						    <h4 class="media-heading">Media heading</h4>
-						    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
+						    <h4 class="media-heading">Social</h4>
+						    The perfect tool for publicly thanking your pals for lending you money. Let the world know how generous they are.
 						</div>
 					</div>
 		         	<div class="media">
