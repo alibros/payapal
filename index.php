@@ -125,11 +125,11 @@ $dbh = null;
 	    	</div>
 	    	<?php } ?>
 
-	    	<?php if((!empty($user['twilio_pin'])) && ($user['verify_pin'])) { ?>
+	    	<?php if(!empty($user['twilio_pin'])) { ?>
 	    	<div class="row-fluid">
 		        <div id="phone-well" class="span12 well">
 		          <h2>Verification PIN #</h2>
-		          <code><?php echo $user['twilio_pin']; ?></code>
+		          <code style="font-size:32pt;"><?php echo $user['twilio_pin']; ?></code>
 		        </div>
 	    	</div>
 	    	<?php } ?>

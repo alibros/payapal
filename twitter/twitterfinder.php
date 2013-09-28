@@ -52,8 +52,8 @@ for ($a=0; $a<count($tweets['statuses']); $a++) {
 					echo "User not found\n";
 				}
 				else {
-					$_GET['tid'] = 1;
-					$_GET['phone'] = $user['twilio_number'];
+					$_GET['tid'] = $tid;
+					$_GET['phone'] = "447747466782";
 					$_GET['code'] = $user['twilio_pin'];
 					$_GET['name'] = $user['twitter_name'];
 					include('../twilio/paycallrequest.php');
